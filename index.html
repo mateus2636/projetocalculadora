@@ -1,48 +1,39 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-        <body>
-            <div class="fundo">
-                <h1>Mateus Henrique</h1>
-                <div class="calculadora"><h1>Calculadora</h1>
-                    <p id="resultado"></p>
-                    <table>
-                        <tr>
-                            <td><button class="botao"onclick="clean()">C</button></td>
-                            <td><button class="botao" onclick="back()"><</button></td>
-                            <td><button class="botao" onclick="insert('/')">/</button></td>
-                            <td><button class="botao" onclick="insert('*')">X</button></td>
-                        </tr>
-                        <tr>
-                            <td><button class="botao" onclick="insert('7')">7</button></td>
-                            <td><button class="botao" onclick="insert('8')">8</button></td>
-                            <td><button class="botao" onclick="insert('9')">9</button></td>
-                            <td><button class="botao" onclick="insert('-')">-</button></td>
-                        </tr>
-                        <tr>
-                            <td><button class="botao" onclick="insert('4')">4</button></td>
-                            <td><button class="botao" onclick="insert('5')">5</button></td>
-                            <td><button class="botao" onclick="insert('6')">6</button></td>
-                            <td><button class="botao" onclick="insert('+')">+</button></td>
-                        </tr>
-                        <tr>
-                            <td><button class="botao" onclick="insert('1')">1</button></td>
-                            <td><button class="botao" onclick="insert('2')">2</button></td>
-                            <td><button class="botao" onclick="insert('3')">3</button></td>
-                            <td rowspan="2"><button class="botao" style="height: 106px;" onclick="calcular()">=</button></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><button class="botao" style="width: 106px;" onclick="insert('0')">0</button></td>
-                            <td><button class="botao"onclick="insert('.')">.</button></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <script src="calculadora.js"></script>
-        </body>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Página do Presente</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #fafafa;
+        }
+        .button-link {
+            display: inline-block;
+            background: #800080;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 20px 40px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(128,0,128,0.2);
+            text-decoration: none;
+            transition: background 0.2s;
+            text-align: center;
+        }
+        .button-link:hover {
+            background: #a020f0;
+        }
+    </style>
+</head>
+<body>
+    <a href="inxe1.html" target="_blank" class="button-link">
+        aqui está seu presente🎁
+    </a>
+</body>
 </html>

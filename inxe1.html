@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Seu Presente</title>
+    <style>
+        body {
+            /* Fundo degrade roxo */
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #800080 0%, #a020f0 100%);
+        }
+        .cards-container {
+            display: flex;
+            gap: 32px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(128,0,128,0.15);
+            padding: 32px 24px;
+            min-width: 320px;
+            max-width: 320px;
+            min-height: 420px;
+            max-height: 420px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+            font-size: 1.2rem;
+            color: #800080;
+            font-family: sans-serif;
+            transition: transform 0.2s;
+            box-sizing: border-box;
+        }
+        .card img {
+            width: 256px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px 12px 0 0;
+            margin-bottom: 16px;
+        }
+        .card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 8px 24px rgba(128,0,128,0.25);
+        }
+    </style>
+</head>
+<body>
+    <div style="position: absolute; top: 40px; width: 100%; text-align: center;">
+        <h1 style="color: #fff; font-family: sans-serif; font-weight: 400; letter-spacing: 1px; margin: 0 0 32px 0;">
+            aqui minha prova de Amor🤍
+        </h1>
+    </div>
+    <div class="cards-container">
+        <div class="card">
+            <img src="gabi.jpg" alt="Gatinho fofo" data-desc="Um gatinho adorável para alegrar seu dia!">
+            <p style="flex:1; display:flex; align-items:flex-end; margin:0;">
+                Desde que comecei a falar com vc, meus dias ficaram mais alegres, confesso que tenho um pouco de dependencia emocional em vc, mas ainda bem que estamos juntos até hoje, e vc siguinifica muito para mim🤍
+            </p>
+        </div>
+        <div class="card">
+            <img src="foto.jpg" alt="Urso simpático" data-desc="Um urso simpático para te dar um abraço virtual.">
+            <p style="flex:1; display:flex; align-items:flex-end; margin:0;">
+                Desde que tiramos essa foto, todos os momentos imagino vc ao meu lado, não importando o local mas sim a presença
+            </p>
+        </div>
+        <div class="card">
+            <img src="corpus.jpg" alt="Presente surpresa" data-desc="Uma surpresa especial só para você!">
+            <p style="flex:1; display:flex; align-items:flex-end; margin:0;">
+                Desde que a Luiza tirou essa foto, percebo que meu amor cresce cada vez mais por vc, e não vou cansar de repetir,\<br> EU TE AMO🤍
+            </p>
+        </div>
+    </div>
+    <a href="inde2.html" style="position:fixed; bottom:20px; right:20px; background:#800080; color:#fff; padding:12px 24px; border-radius:8px; text-decoration:none; font-size:1.2rem; box-shadow:0 4px 16px rgba(128,0,128,0.15); transition: background 0.2s;">
+        Aqui está seu presente🎁
+        
+    </a>
+    <!-- Modal -->
+    <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(40,0,60,0.85); justify-content:center; align-items:center; z-index:1000;">
+        <div style="background:#fff; border-radius:16px; padding:32px 24px; box-shadow:0 8px 32px rgba(128,0,128,0.3); display:flex; flex-direction:column; align-items:center; max-width:90vw; max-height:90vh; position:relative;">
+            <span id="closeModal" style="position:absolute; top:12px; right:20px; font-size:2rem; color:#800080; cursor:pointer;">&times;</span>
+            <img id="modalImg" src="" alt="" style="max-width:400px; max-height:300px; border-radius:12px; margin-bottom:24px;">
+            <p id="modalDesc" style="color:#800080; font-size:1.3rem; text-align:center; margin:0;"></p>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.card img').forEach(img => {
+            img.addEventListener('click', function() {
+                document.getElementById('modalImg').src = this.src;
+                document.getElementById('modalImg').alt = this.alt;
+                document.getElementById('modalDesc').textContent = this.getAttribute('data-desc');
+                document.getElementById('modal').style.display = 'flex';
+            });
+        });
+        document.getElementById('closeModal').onclick = function() {
+            document.getElementById('modal').style.display = 'none';
+        };
+        // Fecha modal ao clicar fora do conteúdo
+        document.getElementById('modal').addEventListener('click', function(e) {
+            if (e.target === this) this.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
